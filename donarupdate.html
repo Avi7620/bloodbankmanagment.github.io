@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update</title>
+    <style>
+        body {
+            background-color: #f2f2f2;
+            font-family: Arial, sans-serif;
+        }
+        
+        form {
+             bottom: 20;
+            width: 25%;
+            margin: 0 auto;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.2);
+            background-color: #fff;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 10px;
+        }
+        
+        input[type="text"], select {
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            background-color: #f2f2f2;
+        }
+        
+        select {
+            width: 100%;
+        }
+        
+        button[type="submit"] {
+            display: block;
+            margin: 20px auto 0;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            background-color: #4CAF50;
+            color: #fff;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        
+        button[type="submit"]:hover {
+            background-color: #3e8e41;
+        }
+    </style>
+</head>
+<body>
+    <form method="POST" action="{{ url_for('update_entry', tele=entry.tele) }}">
+        <label for="uname">Name:</label>
+        <input type="text" id="uname" name="uname" value="{{ entry.uname }}">
+        <br>
+
+        <label for="uage">Age:</label>
+        <input type="text" id="uage" name="uage" value="{{ entry.uage }}">
+        <br>
+
+        <label for="disease">Disease:</label>
+        <input type="text" id="disease" name="disease" value="{{ entry.disease}}">
+        <br>
+        
+        <label for="blood_type">Blood Type:</label>
+        <select name="blood_type" id="blood_type">
+            <option selected >Choose...</option>
+            <option value="A+">A+</option>
+            <option value="A-">A-</option>
+            <option value="B+">B+</option>
+            <option value="B-">B-</option>
+            <option value="AB+">AB+</option>
+            <option value="AB-">AB-</option>
+            <option value="O+">O+</option>
+            <option value="O-">O-</option>
+        </select>
+        <label for="blood_qty">Blood Quantity(ml):</label>
+        <input type="text" id="blood_qty" name="blood_qty" value="{{ entry.blood_qty}}">
+        <br>
+
+        <br>
+        <label for="tele">Telephone Number:</label>
+        <input type="text" id="tele" name="tele" value="{{ entry.tele }}">
+        <br>
+        <label for="city">City:</label>
+        <input type="text" id="city" name="city" value="{{ entry.city }}">
+        <br>
+        <button type="submit">Update</button>
+    </form>
+</body>
+</html>

@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <a href="home" class="home-btn">Home</a>
+    <a href="/avldata" class="home-btn">Blood Info</a>
+    <a href="/contact" class="home-btn">CONTACT</a>
+
+    <!-- <link rel="stylesheet" href="style.css"> -->
+    <meta charset="UTF-8">
+    <title>blood</title>
+
+</head>
+
+<body>
+
+    <form action="/user" method="post">
+        <center>
+            <div class="box">
+                <div class="main">
+                    <div class="register">
+                    <div class="h2"></div>
+                        <h2>USER RESISTRATION</h2>
+                    </div>
+
+                    <div class="name">
+                        <label for="uname"></label>
+                        Name: <input type="text" placeholder="Enter name" name="uname" required>
+                    </div>
+
+                    <div class="age">
+                        Age: <input type="text" placeholder="Enter Age" name="uage" required>
+                    </div>
+
+                    <div class="disease">
+                        Disease: <input type="text" placeholder="Enter type of disease" name="disease" required><br><br>
+                    </div>
+
+                    <div class="blood_type">
+                        <div class="phone">
+                            <label for="tele">Phone No.: </label>
+                            <input type="tel" id="tele" name="tele" placeholder="Enter phone no.">
+                        </div>
+
+                        <div class="city">
+                            City: <input type="text" placeholder="Enter city name" name="city" id="city">
+                        </div>
+
+                        Blood Group: <br>
+                        <select name="blood_type" id="blood_type">
+                            <option value="A+">A+</option>
+                            <option value="A-">A-</option>
+                            <option value="B+">B+</option>
+                            <option value="B-">B-</option>
+                            <option value="AB+">AB+</option>
+                            <option value="AB-">AB-</option>
+                            <option value="O+">O+</option>
+                            <option value="O-">O-</option>
+                        </select>
+
+                    </div>
+                    <div class="blood_qty">
+                        Blood Requirenment: <input type="text" placeholder="in ml" name="blood_qty" required>
+                    </div>
+
+
+
+                    <div class="button">
+                        <input type="submit" value="SUBMIT">
+
+                        
+
+
+
+                    </div>
+                </div>
+            </div>
+            </div>
+        </center>
+    </form>
+    
+
+    
+    <style>
+         body {
+            background-image: url("static/b4.webp");
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+         .home-btn {
+        display: inline-block;
+        background-color: #211f20;
+        color: #fff;
+        padding: 15px 30px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        text-align: center;
+        box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.5);
+        font-weight: bold;
+        text-decoration: none;
+        margin: 20px;
+        /* float: left; */
+    }
+
+    /* Add hover effect for the home link */
+    .home-btn:hover {
+        background-color: #f3efef;
+    }
+            
+
+        .h2 {
+            font-size: 4rem;
+            /* Increased font size */
+            font-weight: bold;
+            text-align: center;
+            text-transform: uppercase;
+            color: #000;
+            position: absolute;
+            top: 50px;
+            /* Moved down by 50px */
+            left: 0;
+            margin: 20px;
+            text-shadow: 2px 2px #0b0a0a, 3px 3px #b23d3d, 4px 4px #000;
+        }
+
+        .box {
+            background-color: transparent;
+            border: none;
+            box-shadow: none;
+        }
+
+        input[type="text"],
+        input[type="tel"],
+        select {
+            background-color: rgba(234, 107, 107, 0.893);
+            /* adjust the opacity as desired */
+            border: 4px solid #0f0f0f;
+            border-radius: 5px;
+            font-weight: bold;
+            color: black;
+        }
+        
+
+        /* Style for the form container */
+        .box {
+    margin-top: 50px;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    width: 30%;
+    height: auto;
+    /* set the height to auto */
+    padding: 50px;
+    box-shadow: 0 0 20px #0b0909;
+    float: right; /* add this line to float the box to the right side */
+    position: relative;
+    left: -180px;
+}
+
+
+        /* Style for the form elements */
+        input[type="text"],
+        input[type="tel"],
+        select {
+            width: 100%;
+            height: 10px;
+            /* decrease the height */
+            padding: 10px;
+            margin-bottom: 20px;
+            font-size: 16px;
+            border: 4px solid #060505;
+            border-radius: 5px;
+        }
+
+        label {
+            font-size: 16px;
+        }
+
+        select {
+            height: 20px;
+            /* decrease the height */
+        }
+
+        input[type="submit"] {
+            background-color: #c71c17;
+            color: #161313;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            font-size: 20px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        input[type="text"],
+        input[type="tel"],
+        select {
+            width: 100%;
+            height: 0px;
+            padding: 10px;
+            margin-bottom: 0px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        html,
+        body {
+            height: 100%;
+        }
+
+        .box {
+           
+            margin-top: 0px;
+            border: 1px solid #ccc;
+            border-radius: 20px;
+            width: 30%;
+            height: calc(100% - 100px);
+            /* height of viewport minus padding, border, and margin */
+            padding: 50px;
+            box-shadow: 0 0 20px #0b0909;
+        }
+
+        input[type="text"],
+        input[type="tel"],
+        select {
+            width: 100%;
+            height: 30px;
+            padding: 5px;
+            margin-bottom: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        /* Style for the form container */
+        .box {
+            margin-top: 0px;
+            /* add margin-top */
+            margin-bottom: 500px;
+            /* remove margin-bottom */
+            border: 1px solid #ccc;
+            border-radius: 20px;
+            width: 30%;
+            height: auto;
+            /* set the height to auto */
+            padding: 50px;
+            box-shadow: 0 0 20px #0b0909;
+        }
+    </style>
+
+</body>
+
+</html>
