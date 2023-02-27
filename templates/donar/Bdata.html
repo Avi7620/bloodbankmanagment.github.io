@@ -1,0 +1,213 @@
+<div class="container">
+  <label for="bloodGroupInput">Blood Type:</label>
+  <input type="text" id="bloodGroupInput" onkeyup="filterTable('bloodGroupInput')" placeholder="SEARCH BY BLOOD Group...">
+  <br>
+  <label for="nameInput">UserName:</label>
+  <input type="text" id="nameInput" onkeyup="filterTable('nameInput')" placeholder="SEARCH BY NAME...">
+</div>
+
+
+<table class="table table-hover" id="myTable">
+  <thead>
+    <div class="data"></div>
+    <tr>
+      <th>INDEX</th>
+      <th>NAME</th>
+      <th>AGE</th>
+      <th>DISEASE</th>
+      <th>BLOOD TYPE</th>
+      <th>BLOOD QUANTITY(ml)</th>
+      <th>PHONE NUMBER</th>
+      <th>CITY</th>
+      
+      <th>DELETE</th>
+      <th>EDIT</th>
+    </tr>
+  </thead>
+  <tbody class="body">
+    {% for entry in entries %}
+    <tr>
+      <td>{{ loop.index }}</td>
+      <td>{{ entry.uname }}</td>
+      <td>{{ entry.uage }}</td>
+      <td>{{ entry.disease }}</td>
+      <td>{{ entry.blood_type }}</td>
+      <td>{{ entry.blood_qty }}</td>
+      <td>{{ entry.tele }}</td>
+      <td>{{ entry.city }}</td>
+      <td>
+        <form action="{{ url_for('delete_entry', tele=entry.tele) }}" method="post">
+          <button type="submit" class="btn btn-danger">Delete</button>
+        </form>
+      </td>
+      <td>
+
+        
+        <script>
+          function filterTable(inputId) {
+            // Get the input value and convert it to lowercase
+            var input = document.getElementById(inputId);
+            var filter = input.value.toLowerCase();
+          
+            // Get the table rows and loop through them
+            var table = document.getElementById("myTable");
+            var rows = table.getElementsByTagName("tr");
+            for (var i = 0; i < rows.length; i++) {
+              var row = rows[i];
+          
+              // Get the cells in the row and check if the name or blood group cell matches the input value
+              var nameCell = row.getElementsByTagName("td")[1];
+              var bloodGroupCell = row.getElementsByTagName("td")[4];
+              if (nameCell || bloodGroupCell) {
+                var nameValue = nameCell.textContent.toLowerCase();
+                var bloodGroupValue = bloodGroupCell.textContent.toLowerCase();
+          
+                // If the input value matches the name or blood group value, show the row, otherwise hide it
+                if (nameValue.indexOf(filter) > -1 || bloodGroupValue.indexOf(filter) > -1) {
+                  row.style.display = "";
+                } else {
+                  row.style.display = "none";
+                }
+              }
+              
+            }
+          }
+          </script>
+          <style>
+
+.container {
+  width: 50%;
+  margin: auto;
+  text-align: center;
+}
+
+            /* Style for the input boxes */
+input[type="text"] {
+  border: 1px solid #0f0f10;
+  border-radius: 5px;
+  box-shadow: inset 2 1px 3px rgba(0, 0, 0, 0.1);
+  padding: 8px;
+  width: 250px;
+}
+
+/* Style for the blood group input box */
+#bloodGroupInput {
+  background-color: #cc18d5;
+}
+
+/* Style for the name input box */
+#nameInput {
+  background-color: #8ad6ed;
+}
+
+
+#bloodGroupInput {
+    padding: 0.5rem;
+    margin-right: 1rem;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    transition: all 0.2s ease-in-out;
+  }
+
+  #bloodGroupInput:hover {
+    border-color: #333;
+  }
+
+  /* Style for the name input box */
+  #nameInput {
+    padding: 0.5rem;
+    margin-right: 1rem;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    transition: all 0.2s ease-in-out;
+  }
+
+  #nameInput:hover {
+    border-color: #333;
+  }
+
+
+
+
+
+
+
+
+          /* Style for the table */
+          table {
+            width: 100%;
+            margin-top: 2rem;
+            border-collapse: collapse;
+          }
+
+          th,
+          td {
+            text-align: left;
+            padding: 0.8rem;
+            border-bottom: 1px solid #ddd;
+          }
+
+          th {
+            background-color: #f2f2f2;
+            color: #333;
+          }
+
+          tr:hover {
+            background-color: #f5f5f5;
+          }
+
+          /* Style for the delete and edit buttons */
+          .btn {
+            padding: 0.3rem 0.5rem;
+            border-radius: 5px;
+            border: none;
+            color: #fff;
+            cursor: pointer;
+          }
+
+          .btn-danger {
+            background-color: #dc3545;
+          }
+
+          .btn-danger:hover {
+            background-color: #c82333;
+          }
+
+          .btn-warning {
+            background-color: #ffc107;
+          }
+
+          .btn-warning:hover {
+            background-color: #e0a800;
+          }
+
+          th {
+            background-color: #df2d2d;
+            /* blue color */
+            color: #fff;
+            /* white text color */
+          }
+
+          th,
+          td {
+            border: 2px solid rgb(19, 18, 18);
+          }
+
+          .table thead th {
+            color: black;
+            text-shadow: 2px 2px 4px #c2bebe;
+          }
+
+          th {
+            font-size: 20px;
+          }
+        </style>
+        <form action="{{ url_for('update_entry', tele=entry.tele) }}" method="get">
+          <button type="submit" class="btn btn-warning">Edit</button>
+        </form>
+      </td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+<!-- <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}"> -->

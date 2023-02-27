@@ -1,0 +1,181 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    background: url("blood2.jpg");
+    background-size: 100%;
+    
+    background-position: 0px 0px;
+}
+div.main{
+    height: 60px;
+    width: 250px;
+    margin: 80px auto 100px auto;
+}
+h2{
+    background-color: rgb(95, 28, 28);
+    border-radius: 200px;
+    border:1px solid rgba(15, 13, 13, 0.877);
+    text-align: center;
+    padding: 15px;
+    font-family:sans-serif
+}
+div.register{
+    
+    position: relative;
+    bottom: 60px;
+    left:300px;
+    height:700px;
+    background-color: rgba(18, 16, 16, 0.5);
+    width: 200%;
+    margin: 30px;
+    
+    font-size: 18px;
+    border-radius: 120px;
+    border:1px solid rgba(255,255,255,0.3);
+    box-shadow: 10px 10px 15px rgba(0,0,0,0.3);
+    color:#b78d22;
+    
+
+}
+.button {
+    top: 60px;
+    left: 60px;
+    height: 10px;
+    background-color: #b31f1f; 
+    border: 20%;
+    border:10px solid rgba(25, 17, 17, 0.3);
+    color: rgb(243, 237, 237);
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+  }
+  .name {
+    background-color: #b31f1f; /* Green */
+    border: 20%;
+    border:10px solid rgba(25, 17, 17, 0.3);
+    color: rgb(243, 237, 237);
+    padding: 10px 35px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+  }
+  .age {
+    background-color: #b31f1f; /* Green */
+    border: 20%;
+    border:10px solid rgba(25, 17, 17, 0.3);
+    color: rgb(243, 237, 237);
+    padding: 10px 35px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+  }
+  .phone {
+    background-color: #b31f1f; /* Green */
+    border: 5%;
+    border:10px solid rgba(25, 17, 17, 0.3);
+    color: rgb(243, 237, 237);
+    padding: 10px 15px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+  }
+  .city {
+    background-color: #b31f1f; /* Green */
+    border: 20%;
+    border:10px solid rgba(25, 17, 17, 0.3);
+    color: rgb(243, 237, 237);
+    padding: 10px 30px;;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+  }
+  .disease {
+    background-color: #b31f1f; /* Green */
+    border: 20%;
+    border:10px solid rgba(25, 17, 17, 0.3);
+    color: rgb(243, 237, 237);
+    padding: 2px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+  }
+
+
+
+
+  /* ///////////// */
+/* Set font and padding for the whole page */
+.body {
+  font-family: Arial, sans-serif;
+  padding: 20px;
+}
+
+/* Style for the table */
+.table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.table th, table td {
+  text-align: left;
+  padding: 8px;
+}
+
+.table th {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.table tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+/* Style for the delete and edit buttons */
+.button {
+  border: none;
+  cursor: pointer;
+}
+
+.button.btn-danger {
+  background-color: #f44336;
+  color: white;
+}
+
+.button.btn-danger:hover {
+  background-color: #d32f2f;
+}
+
+.button.btn-warning {
+  background-color: #ff9800;
+  color: white;
+}
+
+.button.btn-warning:hover {
+  background-color: #f57c00;
+}
+.data{
+  background-color: #4CAF50;
+}
+
+.body {
+  background-image: url("blood2.jpg");
+  background-size: cover;
+}
+
+.h1 {
+  color: #FF0000;
+}
+
+.p {
+  font-size: 16px;
+}
+
